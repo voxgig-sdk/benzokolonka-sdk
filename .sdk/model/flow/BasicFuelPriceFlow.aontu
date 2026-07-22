@@ -1,0 +1,22 @@
+# BasicFuelPriceFlow
+
+main: kit: flow: BasicFuelPriceFlow:
+{
+  entity: "fuel_price",
+  kind: "basic",
+  name: "BasicFuelPriceFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "fuel_price_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFuelPriceFlow"
+}

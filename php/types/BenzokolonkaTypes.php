@@ -1,0 +1,38 @@
+<?php
+declare(strict_types=1);
+
+// Typed models for the Benzokolonka SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+//
+// These are documentation-grade value objects (PHP 8 typed properties),
+// registered on the composer classmap autoload. The SDK boundary exchanges
+// assoc-arrays; these classes name the shapes for tooling and typed callers.
+
+/** FuelPrice entity data model. */
+class FuelPrice
+{
+    public ?string $address = null;
+    public ?int $id = null;
+    public ?string $last_updated = null;
+    public ?string $name = null;
+    public ?float $price = null;
+    public ?float $price_change = null;
+    public ?int $region = null;
+}
+
+/** Request payload for FuelPrice#list. */
+class FuelPriceListMatch
+{
+    public ?string $address = null;
+    public ?int $id = null;
+    public ?string $last_updated = null;
+    public ?string $name = null;
+    public ?float $price = null;
+    public ?float $price_change = null;
+    public ?int $region = null;
+}
+

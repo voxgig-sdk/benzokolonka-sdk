@@ -1,0 +1,192 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Benzokolonka API",
+    "description": "This API provides access to price statistics for different fuel types across various regions in Russia, helping users track price changes over time. It allows retrieval of a list of fuel stations and their respective prices, aiding in informed decision-making for consumers.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/benzokolonka"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://benzokolonka.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/home": {
+      "get": {
+        "summary": "Get Fuel Price Statistics",
+        "description": "Retrieves a list of fuel stations and their respective prices for different fuel types across various regions in Russia. Returns price statistics showing how prices are changing over a specified time period.",
+        "operationId": "getStationsList",
+        "parameters": [
+          {
+            "name": "fuel",
+            "in": "query",
+            "description": "Type of fuel to query. Examples include 'gas', 'ai95', 'ai92', 'ai98', 'dt' (diesel).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "gas",
+                "ai95",
+                "ai92",
+                "ai98",
+                "dt"
+              ],
+              "example": "ai95"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Time period in days for which to retrieve price statistics.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 7,
+              "example": 7
+            }
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "description": "Region ID in Russia for which to retrieve fuel station data.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 4
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response containing fuel station list with price statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stations": {
+                      "type": "array",
+                      "description": "List of fuel stations with pricing information",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "Unique identifier for the fuel station"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the fuel station"
+                          },
+                          "address": {
+                            "type": "string",
+                            "description": "Physical address of the station"
+                          },
+                          "region": {
+                            "type": "integer",
+                            "description": "Region ID where the station is located"
+                          },
+                          "price": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Current fuel price"
+                          },
+                          "priceChange": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "Price change over the specified period"
+                          },
+                          "lastUpdated": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Timestamp of last price update"
+                          }
+                        }
+                      }
+                    },
+                    "statistics": {
+                      "type": "object",
+                      "description": "Aggregated price statistics for the region",
+                      "properties": {
+                        "averagePrice": {
+                          "type": "number",
+                          "format": "float",
+                          "description": "Average fuel price in the region"
+                        },
+                        "minPrice": {
+                          "type": "number",
+                          "format": "float",
+                          "description": "Minimum fuel price found"
+                        },
+                        "maxPrice": {
+                          "type": "number",
+                          "format": "float",
+                          "description": "Maximum fuel price found"
+                        },
+                        "priceChangeTrend": {
+                          "type": "string",
+                          "description": "Overall price trend (increasing, decreasing, stable)"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid parameters provided",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message describing the issue"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message describing the server issue"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Fuel Prices"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Fuel Prices",
+      "description": "Operations related to fuel price statistics and station listings"
+    }
+  ],
+  "externalDocs": {
+    "description": "API Documentation on GitHub",
+    "url": "https://github.com/l0v3m0n3y/benzokolonka"
+  }
+}

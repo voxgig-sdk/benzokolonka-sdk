@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/benzokolonka"
+      }
+      description: "This API provides access to price statistics for different fuel types across various regions in Russia, helping users track price changes over time. It allows retrieval of a list of fuel stations and their respective prices, aiding in informed decision-making for consumers."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://benzokolonka.com"
+        }
+      ]
+      summary: "This API provides access to price statistics for different fuel types across various regions in Russia, helping users track price changes over time."
+      title: "Benzokolonka API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/benzokolonka"
+    }
+  }
+}
+
