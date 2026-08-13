@@ -95,10 +95,10 @@ fuel_price = client.FuelPrice
 | --- | --- | --- | --- |
 | `address` | `String` | No |  |
 | `id` | `Integer` | No |  |
-| `last_updated` | `String` | No |  |
+| `lastUpdated` | `String` | No |  |
 | `name` | `String` | No |  |
 | `price` | `Float` | No |  |
-| `price_change` | `Float` | No |  |
+| `priceChange` | `Float` | No |  |
 | `region` | `Integer` | No |  |
 
 ### Operations

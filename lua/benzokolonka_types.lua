@@ -9,19 +9,19 @@
 ---@class FuelPrice
 ---@field address? string
 ---@field id? number
----@field last_updated? string
+---@field lastUpdated? string
 ---@field name? string
 ---@field price? number
----@field price_change? number
+---@field priceChange? number
 ---@field region? number
 
 ---@class FuelPriceListMatch
 ---@field address? string
 ---@field id? number
----@field last_updated? string
+---@field lastUpdated? string
 ---@field name? string
 ---@field price? number
----@field price_change? number
+---@field priceChange? number
 ---@field region? number
 
 local M = {}

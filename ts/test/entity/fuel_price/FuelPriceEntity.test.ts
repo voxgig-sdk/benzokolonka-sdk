@@ -63,7 +63,7 @@ describe('FuelPriceEntity', async () => {
     const fuel_price_ref01_ent = client.FuelPrice()
     const fuel_price_ref01_match: any = {}
 
-    const fuel_price_ref01_list = await fuel_price_ref01_ent.list(fuel_price_ref01_match)
+    const fuel_price_ref01_list = (await fuel_price_ref01_ent.list(fuel_price_ref01_match)).map((e: any) => e.data())
 
 
   })

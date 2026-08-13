@@ -37,7 +37,7 @@ class FuelPriceEntity extends BenzokolonkaEntityBase<FuelPrice> {
 
 
 
-  async list(this: any, reqmatch?: FuelPriceListMatch, ctrl?: Control): Promise<FuelPrice[]> {
+  async list(this: any, reqmatch?: FuelPriceListMatch, ctrl?: Control): Promise<FuelPriceEntity[]> {
 
     const utility = this._utility
 

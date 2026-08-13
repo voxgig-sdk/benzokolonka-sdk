@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = BenzokolonkaSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $fuelprice = $client->FuelPrice()->list();
 print_r($fuelprice);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -248,10 +249,10 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `address` |  |
 | `id` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `name` |  |
 | `price` |  |
-| `price_change` |  |
+| `priceChange` |  |
 | `region` |  |
 
 Operations: List.
@@ -279,10 +280,10 @@ Create an instance: `$fuel_price = $client->FuelPrice();`
 | --- | --- | --- |
 | `address` | `string` |  |
 | `id` | `int` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `name` | `string` |  |
 | `price` | `float` |  |
-| `price_change` | `float` |  |
+| `priceChange` | `float` |  |
 | `region` | `int` |  |
 
 #### Example: List

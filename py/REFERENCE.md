@@ -89,10 +89,10 @@ fuel_price = client.FuelPrice()
 | --- | --- | --- | --- |
 | `address` | `str` | No |  |
 | `id` | `int` | No |  |
-| `last_updated` | `str` | No |  |
+| `lastUpdated` | `str` | No |  |
 | `name` | `str` | No |  |
 | `price` | `float` | No |  |
-| `price_change` | `float` | No |  |
+| `priceChange` | `float` | No |  |
 | `region` | `int` | No |  |
 
 ### Operations

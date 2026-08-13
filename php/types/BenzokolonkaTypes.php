@@ -17,10 +17,10 @@ class FuelPrice
 {
     public ?string $address = null;
     public ?int $id = null;
-    public ?string $last_updated = null;
+    public ?string $lastUpdated = null;
     public ?string $name = null;
     public ?float $price = null;
-    public ?float $price_change = null;
+    public ?float $priceChange = null;
     public ?int $region = null;
 }
 
@@ -29,10 +29,10 @@ class FuelPriceListMatch
 {
     public ?string $address = null;
     public ?int $id = null;
-    public ?string $last_updated = null;
+    public ?string $lastUpdated = null;
     public ?string $name = null;
     public ?float $price = null;
-    public ?float $price_change = null;
+    public ?float $priceChange = null;
     public ?int $region = null;
 }
 

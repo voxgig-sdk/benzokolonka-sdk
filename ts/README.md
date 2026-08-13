@@ -35,7 +35,9 @@ const client = new BenzokolonkaSDK()
 
 ### 2. List fuelprice records
 
-`list()` resolves to an array of FuelPrice objects — iterate it directly:
+`list()` resolves to an array of FuelPrice ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const fuelprices = await client.FuelPrice().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = BenzokolonkaSDK.test()
 
 const fuelprice = await client.FuelPrice().list()
-// fuelprice is a bare entity populated with mock response data
+// fuelprice is the entity, populated with mock response data
+// — call fuelprice.data() for the record itself
 console.log(fuelprice)
 ```
 
@@ -286,10 +289,10 @@ The `prepare()` method returns:
 | --- | --- |
 | `address` |  |
 | `id` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `name` |  |
 | `price` |  |
-| `price_change` |  |
+| `priceChange` |  |
 | `region` |  |
 
 Operations: list.
@@ -317,10 +320,10 @@ Create an instance: `const fuel_price = client.FuelPrice()`
 | --- | --- | --- |
 | `address` | `string` |  |
 | `id` | `number` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `name` | `string` |  |
 | `price` | `number` |  |
-| `price_change` | `number` |  |
+| `priceChange` | `number` |  |
 | `region` | `number` |  |
 
 #### Example: List

@@ -16,11 +16,11 @@
 import pytest
 
 from benzokolonka_sdk import BenzokolonkaSDK
-from core.error import BenzokolonkaError
-from core.result import BenzokolonkaResult
-from core.response import BenzokolonkaResponse
-from core.spec import BenzokolonkaSpec
-from feature.base_feature import BenzokolonkaBaseFeature
+from benzokolonka_sdk.core.error import BenzokolonkaError
+from benzokolonka_sdk.core.result import BenzokolonkaResult
+from benzokolonka_sdk.core.response import BenzokolonkaResponse
+from benzokolonka_sdk.core.spec import BenzokolonkaSpec
+from benzokolonka_sdk.feature.base_feature import BenzokolonkaBaseFeature
 
 
 def _client():

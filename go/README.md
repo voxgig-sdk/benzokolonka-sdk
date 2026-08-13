@@ -262,10 +262,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"address"` |  |
 | `"id"` |  |
-| `"last_updated"` |  |
+| `"lastUpdated"` |  |
 | `"name"` |  |
 | `"price"` |  |
-| `"price_change"` |  |
+| `"priceChange"` |  |
 | `"region"` |  |
 
 Operations: List.
@@ -293,10 +293,10 @@ Create an instance: `fuelPrice := client.FuelPrice(nil)`
 | --- | --- | --- |
 | `address` | `string` |  |
 | `id` | `int` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `name` | `string` |  |
 | `price` | `float64` |  |
-| `price_change` | `float64` |  |
+| `priceChange` | `float64` |  |
 | `region` | `int` |  |
 
 #### Example: List

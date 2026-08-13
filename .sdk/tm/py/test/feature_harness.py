@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BenzokolonkaControl
-from core.error import BenzokolonkaError
-from core.result import BenzokolonkaResult
-from core.spec import BenzokolonkaSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import BenzokolonkaControl
+from projectname_sdk.core.error import BenzokolonkaError
+from projectname_sdk.core.result import BenzokolonkaResult
+from projectname_sdk.core.spec import BenzokolonkaSpec
 
 
 # True when this SDK was generated with the named feature.

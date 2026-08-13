@@ -118,10 +118,10 @@ const fuel_price = client.FuelPrice()
 | --- | --- | --- | --- |
 | `address` | `string` | No |  |
 | `id` | `number` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `name` | `string` | No |  |
 | `price` | `number` | No |  |
-| `price_change` | `number` | No |  |
+| `priceChange` | `number` | No |  |
 | `region` | `number` | No |  |
 
 ### Operations

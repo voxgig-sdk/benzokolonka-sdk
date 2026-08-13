@@ -4,28 +4,28 @@
       "FUEL_PRICE00": {
         "address": "s46",
         "id": "FUEL_PRICE00",
-        "last_updated": "s48",
+        "lastUpdated": "s48",
         "name": "s49",
         "price": 74,
-        "price_change": 75,
+        "priceChange": 75,
         "region": "s4c"
       },
       "FUEL_PRICE01": {
         "address": "s8c",
         "id": "FUEL_PRICE01",
-        "last_updated": "s8e",
+        "lastUpdated": "s8e",
         "name": "s8f",
         "price": 144,
-        "price_change": 145,
+        "priceChange": 145,
         "region": "s92"
       },
       "FUEL_PRICE02": {
         "address": "sd2",
         "id": "FUEL_PRICE02",
-        "last_updated": "sd4",
+        "lastUpdated": "sd4",
         "name": "sd5",
         "price": 214,
-        "price_change": 215,
+        "priceChange": 215,
         "region": "sd8"
       }
     }
@@ -34,10 +34,10 @@
     "fuel_price": {
       "fuel_price_ref01": {
         "address": "s118",
-        "last_updated": "s11a",
+        "lastUpdated": "s11a",
         "name": "s11b",
         "price": 284,
-        "price_change": 285,
+        "priceChange": 285,
         "region": "s11e"
       }
     }

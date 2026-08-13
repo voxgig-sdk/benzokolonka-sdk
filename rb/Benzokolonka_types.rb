@@ -16,7 +16,7 @@
 # @!attribute [rw] id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] last_updated
+# @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -25,7 +25,7 @@
 # @!attribute [rw] price
 #   @return [Float, nil]
 #
-# @!attribute [rw] price_change
+# @!attribute [rw] priceChange
 #   @return [Float, nil]
 #
 # @!attribute [rw] region
@@ -33,10 +33,10 @@
 FuelPrice = Struct.new(
   :address,
   :id,
-  :last_updated,
+  :lastUpdated,
   :name,
   :price,
-  :price_change,
+  :priceChange,
   :region,
   keyword_init: true
 )
@@ -49,7 +49,7 @@ FuelPrice = Struct.new(
 # @!attribute [rw] id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] last_updated
+# @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -58,7 +58,7 @@ FuelPrice = Struct.new(
 # @!attribute [rw] price
 #   @return [Float, nil]
 #
-# @!attribute [rw] price_change
+# @!attribute [rw] priceChange
 #   @return [Float, nil]
 #
 # @!attribute [rw] region
@@ -66,10 +66,10 @@ FuelPrice = Struct.new(
 FuelPriceListMatch = Struct.new(
   :address,
   :id,
-  :last_updated,
+  :lastUpdated,
   :name,
   :price,
-  :price_change,
+  :priceChange,
   :region,
   keyword_init: true
 )

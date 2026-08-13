@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ BenzokolonkaUtility::setRegistrar(function (BenzokolonkaUtility $u): void {
     $u->prepare_params = [BenzokolonkaPrepareParams::class, 'call'];
     $u->prepare_path = [BenzokolonkaPreparePath::class, 'call'];
     $u->prepare_query = [BenzokolonkaPrepareQuery::class, 'call'];
+    $u->graphql_body = [BenzokolonkaGraphql::class, 'body'];
+    $u->graphql_errors = [BenzokolonkaGraphql::class, 'errors'];
     $u->result_basic = [BenzokolonkaResultBasic::class, 'call'];
     $u->result_body = [BenzokolonkaResultBody::class, 'call'];
     $u->result_headers = [BenzokolonkaResultHeaders::class, 'call'];

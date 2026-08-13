@@ -94,10 +94,10 @@ $fuel_price = $client->FuelPrice();
 | --- | --- | --- | --- |
 | `address` | `string` | No |  |
 | `id` | `int` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `name` | `string` | No |  |
 | `price` | `float` | No |  |
-| `price_change` | `float` | No |  |
+| `priceChange` | `float` | No |  |
 | `region` | `int` | No |  |
 
 ### Operations

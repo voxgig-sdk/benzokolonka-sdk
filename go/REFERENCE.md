@@ -100,10 +100,10 @@ fmt.Println(fuelPrice.GetName()) // "fuel_price"
 | --- | --- | --- | --- |
 | `address` | `string` | No |  |
 | `id` | `int` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `name` | `string` | No |  |
 | `price` | `float64` | No |  |
-| `price_change` | `float64` | No |  |
+| `priceChange` | `float64` | No |  |
 | `region` | `int` | No |  |
 
 ### Operations

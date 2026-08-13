@@ -40,7 +40,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "last_updated",
+            ["name"] = "lastUpdated",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -61,7 +61,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "price_change",
+            ["name"] = "priceChange",
             ["req"] = false,
             ["type"] = "`$NUMBER`",
             ["index$"] = 5,
@@ -113,6 +113,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/home",
                 ["parts"] = {

@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = BenzokolonkaSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 fuelprice = client.FuelPrice.list()
 puts fuelprice
 ```
@@ -238,10 +239,10 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `address` |  |
 | `id` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `name` |  |
 | `price` |  |
-| `price_change` |  |
+| `priceChange` |  |
 | `region` |  |
 
 Operations: List.
@@ -269,10 +270,10 @@ Create an instance: `fuel_price = client.FuelPrice`
 | --- | --- | --- |
 | `address` | `String` |  |
 | `id` | `Integer` |  |
-| `last_updated` | `String` |  |
+| `lastUpdated` | `String` |  |
 | `name` | `String` |  |
 | `price` | `Float` |  |
-| `price_change` | `Float` |  |
+| `priceChange` | `Float` |  |
 | `region` | `Integer` |  |
 
 #### Example: List

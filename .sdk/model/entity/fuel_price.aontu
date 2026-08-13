@@ -16,7 +16,7 @@ main: kit: entity: fuel_price: {
       type: "`$INTEGER`"
     }
     {
-      name: "last_updated"
+      name: "lastUpdated"
       req: false
       type: "`$STRING`"
     }
@@ -31,7 +31,7 @@ main: kit: entity: fuel_price: {
       type: "`$NUMBER`"
     }
     {
-      name: "price_change"
+      name: "priceChange"
       req: false
       type: "`$NUMBER`"
     }

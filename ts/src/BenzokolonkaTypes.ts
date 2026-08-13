@@ -8,20 +8,20 @@
 export interface FuelPrice {
   address?: string
   id?: number
-  last_updated?: string
+  lastUpdated?: string
   name?: string
   price?: number
-  price_change?: number
+  priceChange?: number
   region?: number
 }
 
 export interface FuelPriceListMatch {
   address?: string
   id?: number
-  last_updated?: string
+  lastUpdated?: string
   name?: string
   price?: number
-  price_change?: number
+  priceChange?: number
   region?: number
 }
 

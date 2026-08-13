@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Benzokolonka',
   }
 
 
@@ -70,7 +70,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "last_updated",
+          "name": "lastUpdated",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -91,7 +91,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "price_change",
+          "name": "priceChange",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 5
@@ -143,6 +143,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/home",
               "parts": [

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BenzokolonkaUtility.registrar = ->(u) {
   u.prepare_params = BenzokolonkaUtilities::PrepareParams
   u.prepare_path = BenzokolonkaUtilities::PreparePath
   u.prepare_query = BenzokolonkaUtilities::PrepareQuery
+  u.graphql_body = BenzokolonkaUtilities::GraphqlBody
+  u.graphql_errors = BenzokolonkaUtilities::GraphqlErrors
   u.result_basic = BenzokolonkaUtilities::ResultBasic
   u.result_body = BenzokolonkaUtilities::ResultBody
   u.result_headers = BenzokolonkaUtilities::ResultHeaders

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Benzokolonka SDK exists test
 
 import pytest
 from benzokolonka_sdk import BenzokolonkaSDK

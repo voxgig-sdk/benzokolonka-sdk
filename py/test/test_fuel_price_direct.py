@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from benzokolonka_sdk.utility.voxgig_struct import voxgig_struct as vs
 from benzokolonka_sdk import BenzokolonkaSDK
-from core import helpers
+from benzokolonka_sdk.core import helpers
 from test import runner
 
 

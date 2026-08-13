@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local fuel_price, err = client:FuelPrice():load()
+    local fuel_price, err = client:FuelPrice():list()
     if err then error(err) end
-    -- fuel_price is the loaded record
+    -- fuel_price is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -233,10 +233,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `address` |  |
 | `id` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `name` |  |
 | `price` |  |
-| `price_change` |  |
+| `priceChange` |  |
 | `region` |  |
 
 Operations: List.
@@ -264,10 +264,10 @@ Create an instance: `local fuel_price = client:FuelPrice(nil)`
 | --- | --- | --- |
 | `address` | `string` |  |
 | `id` | `number` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `name` | `string` |  |
 | `price` | `number` |  |
-| `price_change` | `number` |  |
+| `priceChange` | `number` |  |
 | `region` | `number` |  |
 
 #### Example: List
