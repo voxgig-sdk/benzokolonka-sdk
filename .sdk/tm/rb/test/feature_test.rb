@@ -15,7 +15,7 @@ require_relative "../Benzokolonka_sdk"
 module BenzokolonkaFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = BenzokolonkaConfig.make_config["feature"]
+    f = BenzokolonkaConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

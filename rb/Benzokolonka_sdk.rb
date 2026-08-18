@@ -28,7 +28,7 @@ class BenzokolonkaSDK
     utility = BenzokolonkaUtility.new
     @_utility = utility
 
-    config = BenzokolonkaConfig.make_config
+    config = BenzokolonkaConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

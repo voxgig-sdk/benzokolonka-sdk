@@ -40,7 +40,7 @@ class BenzokolonkaSDK
         $utility = new BenzokolonkaUtility();
         $this->_utility = $utility;
 
-        $config = BenzokolonkaConfig::make_config();
+        $config = BenzokolonkaConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

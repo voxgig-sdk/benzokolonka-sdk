@@ -1,6 +1,20 @@
 # Benzokolonka SDK configuration
 
 module BenzokolonkaConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -26,53 +40,32 @@ module BenzokolonkaConfig
         "fuel_price" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "address",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "id",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "lastUpdated",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "name",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "price",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "priceChange",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "region",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 6,
             },
           ],
           "name" => "fuel_price",
@@ -82,11 +75,9 @@ module BenzokolonkaConfig
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => "ai95",
                         "kind" => "query",
                         "name" => "fuel",
@@ -95,21 +86,17 @@ module BenzokolonkaConfig
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => 7,
                         "kind" => "query",
                         "name" => "period",
                         "orig" => "period",
-                        "reqd" => false,
                         "type" => "`$INTEGER`",
                       },
                       {
-                        "active" => true,
                         "example" => 4,
                         "kind" => "query",
                         "name" => "region",
                         "orig" => "region",
-                        "reqd" => false,
                         "type" => "`$INTEGER`",
                       },
                     ],
@@ -132,10 +119,8 @@ module BenzokolonkaConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
           },
           "relations" => {
