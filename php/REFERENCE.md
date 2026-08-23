@@ -92,13 +92,13 @@ $fuel_price = $client->FuelPrice();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `string` | No |  |
-| `id` | `int` | No |  |
-| `lastUpdated` | `string` | No |  |
-| `name` | `string` | No |  |
-| `price` | `float` | No |  |
-| `priceChange` | `float` | No |  |
-| `region` | `int` | No |  |
+| `address` | `string` | No | Physical address of the station |
+| `id` | `int` | No | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | No | Timestamp of last price update |
+| `name` | `string` | No | Name of the fuel station |
+| `price` | `float` | No | Current fuel price |
+| `priceChange` | `float` | No | Price change over the specified period |
+| `region` | `int` | No | Region ID where the station is located |
 
 ### Operations
 

@@ -237,13 +237,13 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
-| `id` |  |
-| `lastUpdated` |  |
-| `name` |  |
-| `price` |  |
-| `priceChange` |  |
-| `region` |  |
+| `address` | Physical address of the station |
+| `id` | Unique identifier for the fuel station |
+| `lastUpdated` | Timestamp of last price update |
+| `name` | Name of the fuel station |
+| `price` | Current fuel price |
+| `priceChange` | Price change over the specified period |
+| `region` | Region ID where the station is located |
 
 Operations: List.
 
@@ -268,13 +268,13 @@ Create an instance: `fuel_price = client.FuelPrice`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `String` |  |
-| `id` | `Integer` |  |
-| `lastUpdated` | `String` |  |
-| `name` | `String` |  |
-| `price` | `Float` |  |
-| `priceChange` | `Float` |  |
-| `region` | `Integer` |  |
+| `address` | `String` | Physical address of the station |
+| `id` | `Integer` | Unique identifier for the fuel station |
+| `lastUpdated` | `String` | Timestamp of last price update |
+| `name` | `String` | Name of the fuel station |
+| `price` | `Float` | Current fuel price |
+| `priceChange` | `Float` | Price change over the specified period |
+| `region` | `Integer` | Region ID where the station is located |
 
 #### Example: List
 

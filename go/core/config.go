@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Benzokolonka",
+			"slug": "benzokolonka",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,30 +36,37 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "address",
+						"short": "Physical address of the station",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the fuel station",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "lastUpdated",
+						"short": "Timestamp of last price update",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the fuel station",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "price",
+						"short": "Current fuel price",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "priceChange",
+						"short": "Price change over the specified period",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "region",
+						"short": "Region ID where the station is located",
 						"type": "`$INTEGER`",
 					},
 				},

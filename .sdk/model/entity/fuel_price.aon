@@ -8,36 +8,43 @@ main: kit: entity: fuel_price: {
     {
       name: "address"
       req: false
+      short: "Physical address of the station"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the fuel station"
       type: "`$INTEGER`"
     }
     {
       name: "lastUpdated"
       req: false
+      short: "Timestamp of last price update"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the fuel station"
       type: "`$STRING`"
     }
     {
       name: "price"
       req: false
+      short: "Current fuel price"
       type: "`$NUMBER`"
     }
     {
       name: "priceChange"
       req: false
+      short: "Price change over the specified period"
       type: "`$NUMBER`"
     }
     {
       name: "region"
       req: false
+      short: "Region ID where the station is located"
       type: "`$INTEGER`"
     }
   ]

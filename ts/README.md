@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,13 +287,13 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
-| `id` |  |
-| `lastUpdated` |  |
-| `name` |  |
-| `price` |  |
-| `priceChange` |  |
-| `region` |  |
+| `address` | Physical address of the station |
+| `id` | Unique identifier for the fuel station |
+| `lastUpdated` | Timestamp of last price update |
+| `name` | Name of the fuel station |
+| `price` | Current fuel price |
+| `priceChange` | Price change over the specified period |
+| `region` | Region ID where the station is located |
 
 Operations: list.
 
@@ -318,13 +318,13 @@ Create an instance: `const fuel_price = client.FuelPrice()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `string` |  |
-| `id` | `number` |  |
-| `lastUpdated` | `string` |  |
-| `name` | `string` |  |
-| `price` | `number` |  |
-| `priceChange` | `number` |  |
-| `region` | `number` |  |
+| `address` | `string` | Physical address of the station |
+| `id` | `number` | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | Timestamp of last price update |
+| `name` | `string` | Name of the fuel station |
+| `price` | `number` | Current fuel price |
+| `priceChange` | `number` | Price change over the specified period |
+| `region` | `number` | Region ID where the station is located |
 
 #### Example: List
 

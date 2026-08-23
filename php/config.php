@@ -33,6 +33,9 @@ class BenzokolonkaConfig
         return [
             "main" => [
                 "name" => "Benzokolonka",
+                "slug" => "benzokolonka",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,30 +58,37 @@ class BenzokolonkaConfig
           'fields' => [
             [
               'name' => 'address',
+              'short' => 'Physical address of the station',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the fuel station',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'lastUpdated',
+              'short' => 'Timestamp of last price update',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'name',
+              'short' => 'Name of the fuel station',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'price',
+              'short' => 'Current fuel price',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'priceChange',
+              'short' => 'Price change over the specified period',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'region',
+              'short' => 'Region ID where the station is located',
               'type' => '`$INTEGER`',
             ],
           ],

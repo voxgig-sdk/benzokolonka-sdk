@@ -90,13 +90,13 @@ local fuel_price = client:FuelPrice(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `string` | No |  |
-| `id` | `number` | No |  |
-| `lastUpdated` | `string` | No |  |
-| `name` | `string` | No |  |
-| `price` | `number` | No |  |
-| `priceChange` | `number` | No |  |
-| `region` | `number` | No |  |
+| `address` | `string` | No | Physical address of the station |
+| `id` | `number` | No | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | No | Timestamp of last price update |
+| `name` | `string` | No | Name of the fuel station |
+| `price` | `number` | No | Current fuel price |
+| `priceChange` | `number` | No | Price change over the specified period |
+| `region` | `number` | No | Region ID where the station is located |
 
 ### Operations
 

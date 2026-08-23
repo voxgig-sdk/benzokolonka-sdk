@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Benzokolonka',
+        slug: "benzokolonka",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,30 +67,37 @@ class Config {
       "fields": [
         {
           "name": "address",
+          "short": "Physical address of the station",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the fuel station",
           "type": "`$INTEGER`"
         },
         {
           "name": "lastUpdated",
+          "short": "Timestamp of last price update",
           "type": "`$STRING`"
         },
         {
           "name": "name",
+          "short": "Name of the fuel station",
           "type": "`$STRING`"
         },
         {
           "name": "price",
+          "short": "Current fuel price",
           "type": "`$NUMBER`"
         },
         {
           "name": "priceChange",
+          "short": "Price change over the specified period",
           "type": "`$NUMBER`"
         },
         {
           "name": "region",
+          "short": "Region ID where the station is located",
           "type": "`$INTEGER`"
         }
       ],

@@ -231,13 +231,13 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
-| `id` |  |
-| `lastUpdated` |  |
-| `name` |  |
-| `price` |  |
-| `priceChange` |  |
-| `region` |  |
+| `address` | Physical address of the station |
+| `id` | Unique identifier for the fuel station |
+| `lastUpdated` | Timestamp of last price update |
+| `name` | Name of the fuel station |
+| `price` | Current fuel price |
+| `priceChange` | Price change over the specified period |
+| `region` | Region ID where the station is located |
 
 Operations: List.
 
@@ -262,13 +262,13 @@ Create an instance: `local fuel_price = client:FuelPrice(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `string` |  |
-| `id` | `number` |  |
-| `lastUpdated` | `string` |  |
-| `name` | `string` |  |
-| `price` | `number` |  |
-| `priceChange` | `number` |  |
-| `region` | `number` |  |
+| `address` | `string` | Physical address of the station |
+| `id` | `number` | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | Timestamp of last price update |
+| `name` | `string` | Name of the fuel station |
+| `price` | `number` | Current fuel price |
+| `priceChange` | `number` | Price change over the specified period |
+| `region` | `number` | Region ID where the station is located |
 
 #### Example: List
 

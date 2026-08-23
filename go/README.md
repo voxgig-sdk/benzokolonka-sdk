@@ -6,7 +6,7 @@ The Golang SDK for the Benzokolonka API — an entity-oriented client using stan
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.FuelPrice(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,13 +260,13 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"address"` |  |
-| `"id"` |  |
-| `"lastUpdated"` |  |
-| `"name"` |  |
-| `"price"` |  |
-| `"priceChange"` |  |
-| `"region"` |  |
+| `"address"` | Physical address of the station |
+| `"id"` | Unique identifier for the fuel station |
+| `"lastUpdated"` | Timestamp of last price update |
+| `"name"` | Name of the fuel station |
+| `"price"` | Current fuel price |
+| `"priceChange"` | Price change over the specified period |
+| `"region"` | Region ID where the station is located |
 
 Operations: List.
 
@@ -291,13 +291,13 @@ Create an instance: `fuelPrice := client.FuelPrice(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `string` |  |
-| `id` | `int` |  |
-| `lastUpdated` | `string` |  |
-| `name` | `string` |  |
-| `price` | `float64` |  |
-| `priceChange` | `float64` |  |
-| `region` | `int` |  |
+| `address` | `string` | Physical address of the station |
+| `id` | `int` | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | Timestamp of last price update |
+| `name` | `string` | Name of the fuel station |
+| `price` | `float64` | Current fuel price |
+| `priceChange` | `float64` | Price change over the specified period |
+| `region` | `int` | Region ID where the station is located |
 
 #### Example: List
 

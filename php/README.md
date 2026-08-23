@@ -247,13 +247,13 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `address` |  |
-| `id` |  |
-| `lastUpdated` |  |
-| `name` |  |
-| `price` |  |
-| `priceChange` |  |
-| `region` |  |
+| `address` | Physical address of the station |
+| `id` | Unique identifier for the fuel station |
+| `lastUpdated` | Timestamp of last price update |
+| `name` | Name of the fuel station |
+| `price` | Current fuel price |
+| `priceChange` | Price change over the specified period |
+| `region` | Region ID where the station is located |
 
 Operations: List.
 
@@ -278,13 +278,13 @@ Create an instance: `$fuel_price = $client->FuelPrice();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `address` | `string` |  |
-| `id` | `int` |  |
-| `lastUpdated` | `string` |  |
-| `name` | `string` |  |
-| `price` | `float` |  |
-| `priceChange` | `float` |  |
-| `region` | `int` |  |
+| `address` | `string` | Physical address of the station |
+| `id` | `int` | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | Timestamp of last price update |
+| `name` | `string` | Name of the fuel station |
+| `price` | `float` | Current fuel price |
+| `priceChange` | `float` | Price change over the specified period |
+| `region` | `int` | Region ID where the station is located |
 
 #### Example: List
 

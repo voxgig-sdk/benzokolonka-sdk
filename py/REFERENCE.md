@@ -87,13 +87,13 @@ fuel_price = client.FuelPrice()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `str` | No |  |
-| `id` | `int` | No |  |
-| `lastUpdated` | `str` | No |  |
-| `name` | `str` | No |  |
-| `price` | `float` | No |  |
-| `priceChange` | `float` | No |  |
-| `region` | `int` | No |  |
+| `address` | `str` | No | Physical address of the station |
+| `id` | `int` | No | Unique identifier for the fuel station |
+| `lastUpdated` | `str` | No | Timestamp of last price update |
+| `name` | `str` | No | Name of the fuel station |
+| `price` | `float` | No | Current fuel price |
+| `priceChange` | `float` | No | Price change over the specified period |
+| `region` | `int` | No | Region ID where the station is located |
 
 ### Operations
 

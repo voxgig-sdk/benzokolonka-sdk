@@ -98,13 +98,13 @@ fmt.Println(fuelPrice.GetName()) // "fuel_price"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `address` | `string` | No |  |
-| `id` | `int` | No |  |
-| `lastUpdated` | `string` | No |  |
-| `name` | `string` | No |  |
-| `price` | `float64` | No |  |
-| `priceChange` | `float64` | No |  |
-| `region` | `int` | No |  |
+| `address` | `string` | No | Physical address of the station |
+| `id` | `int` | No | Unique identifier for the fuel station |
+| `lastUpdated` | `string` | No | Timestamp of last price update |
+| `name` | `string` | No | Name of the fuel station |
+| `price` | `float64` | No | Current fuel price |
+| `priceChange` | `float64` | No | Price change over the specified period |
+| `region` | `int` | No | Region ID where the station is located |
 
 ### Operations
 
