@@ -42,6 +42,7 @@ class BenzokolonkaConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
