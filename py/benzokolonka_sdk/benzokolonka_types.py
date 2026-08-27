@@ -26,11 +26,10 @@ class FuelPrice(TypedDict, total=False):
     region: int
 
 
-class FuelPriceListMatch(TypedDict, total=False):
-    address: str
-    id: int
-    lastUpdated: str
-    name: str
-    price: float
-    priceChange: float
+class FuelPriceListMatchRequired(TypedDict):
+    fuel: str
+
+
+class FuelPriceListMatch(FuelPriceListMatchRequired, total=False):
+    period: int
     region: int

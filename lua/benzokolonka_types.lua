@@ -16,12 +16,8 @@
 ---@field region? number
 
 ---@class FuelPriceListMatch
----@field address? string
----@field id? number
----@field lastUpdated? string
----@field name? string
----@field price? number
----@field priceChange? number
+---@field fuel string
+---@field period? number
 ---@field region? number
 
 local M = {}

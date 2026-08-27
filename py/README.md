@@ -43,7 +43,7 @@ error — iterate it directly.
 
 ```python
 try:
-    fuelprices = client.FuelPrice().list()
+    fuelprices = client.FuelPrice().list({"fuel": "example"})
     for fuelprice in fuelprices:
         print(fuelprice)
 except Exception as err:
@@ -285,8 +285,31 @@ Create an instance: `fuel_price = client.FuelPrice()`
 #### Example: List
 
 ```python
-fuel_prices = client.FuelPrice().list()
+fuel_prices = client.FuelPrice().list({"fuel": "example"})
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced

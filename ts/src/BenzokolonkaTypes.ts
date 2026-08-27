@@ -16,12 +16,8 @@ export interface FuelPrice {
 }
 
 export interface FuelPriceListMatch {
-  address?: string
-  id?: number
-  lastUpdated?: string
-  name?: string
-  price?: number
-  priceChange?: number
+  fuel: string
+  period?: number
   region?: number
 }
 

@@ -25,12 +25,8 @@ type FuelPrice struct {
 
 // FuelPriceListMatch is the typed request payload for FuelPrice.ListTyped.
 type FuelPriceListMatch struct {
-	Address *string `json:"address,omitempty"`
-	Id *int `json:"id,omitempty"`
-	LastUpdated *string `json:"lastUpdated,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Price *float64 `json:"price,omitempty"`
-	PriceChange *float64 `json:"priceChange,omitempty"`
+	Fuel string `json:"fuel"`
+	Period *int `json:"period,omitempty"`
 	Region *int `json:"region,omitempty"`
 }
 

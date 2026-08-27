@@ -27,12 +27,8 @@ class FuelPrice
 /** Request payload for FuelPrice#list. */
 class FuelPriceListMatch
 {
-    public ?string $address = null;
-    public ?int $id = null;
-    public ?string $lastUpdated = null;
-    public ?string $name = null;
-    public ?float $price = null;
-    public ?float $priceChange = null;
+    public string $fuel;
+    public ?int $period = null;
     public ?int $region = null;
 }
 

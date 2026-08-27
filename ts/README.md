@@ -40,7 +40,7 @@ resolves to entities, not raw records. Iterate them directly, and call
 `.data()` on one for the record it holds:
 
 ```ts
-const fuelprices = await client.FuelPrice().list()
+const fuelprices = await client.FuelPrice().list({ fuel: "example" })
 
 for (const fuelprice of fuelprices) {
   console.log(fuelprice)
@@ -329,8 +329,31 @@ Create an instance: `const fuel_price = client.FuelPrice()`
 #### Example: List
 
 ```ts
-const fuel_prices = await client.FuelPrice().list()
+const fuel_prices = await client.FuelPrice().list({ fuel: "example" })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced

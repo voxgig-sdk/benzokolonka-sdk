@@ -43,33 +43,17 @@ FuelPrice = Struct.new(
 
 # Request payload for FuelPrice#list.
 #
-# @!attribute [rw] address
-#   @return [String, nil]
+# @!attribute [rw] fuel
+#   @return [String]
 #
-# @!attribute [rw] id
+# @!attribute [rw] period
 #   @return [Integer, nil]
-#
-# @!attribute [rw] lastUpdated
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] price
-#   @return [Float, nil]
-#
-# @!attribute [rw] priceChange
-#   @return [Float, nil]
 #
 # @!attribute [rw] region
 #   @return [Integer, nil]
 FuelPriceListMatch = Struct.new(
-  :address,
-  :id,
-  :lastUpdated,
-  :name,
-  :price,
-  :priceChange,
+  :fuel,
+  :period,
   :region,
   keyword_init: true
 )
