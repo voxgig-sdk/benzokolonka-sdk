@@ -54,6 +54,7 @@ module BenzokolonkaConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "date-time",
               "name" => "lastUpdated",
               "short" => "Timestamp of last price update",
               "type" => "`$STRING`",
@@ -64,11 +65,13 @@ module BenzokolonkaConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "float",
               "name" => "price",
               "short" => "Current fuel price",
               "type" => "`$NUMBER`",
             },
             {
+              "format" => "float",
               "name" => "priceChange",
               "short" => "Price change over the specified period",
               "type" => "`$NUMBER`",
@@ -79,6 +82,10 @@ module BenzokolonkaConfig
               "type" => "`$INTEGER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "fuel_price",
           "op" => {
             "list" => {
@@ -115,9 +122,13 @@ module BenzokolonkaConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/home",
-                  "parts" => [
-                    "api",
-                    "home",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "home",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -130,6 +141,10 @@ module BenzokolonkaConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "api",
+                    "home",
+                  ],
                 },
               ],
             },

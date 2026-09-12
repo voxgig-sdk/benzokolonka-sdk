@@ -68,6 +68,7 @@ class BenzokolonkaConfig
               'type' => '`$INTEGER`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'lastUpdated',
               'short' => 'Timestamp of last price update',
               'type' => '`$STRING`',
@@ -78,11 +79,13 @@ class BenzokolonkaConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'float',
               'name' => 'price',
               'short' => 'Current fuel price',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'float',
               'name' => 'priceChange',
               'short' => 'Price change over the specified period',
               'type' => '`$NUMBER`',
@@ -92,6 +95,10 @@ class BenzokolonkaConfig
               'short' => 'Region ID where the station is located',
               'type' => '`$INTEGER`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'fuel_price',
           'op' => [
@@ -129,9 +136,13 @@ class BenzokolonkaConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/home',
-                  'parts' => [
-                    'api',
-                    'home',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'home',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -143,6 +154,10 @@ class BenzokolonkaConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'home',
                   ],
                 ],
               ],

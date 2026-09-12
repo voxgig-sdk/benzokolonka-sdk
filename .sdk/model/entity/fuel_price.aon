@@ -18,6 +18,7 @@ main: kit: entity: fuel_price: {
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "lastUpdated"
       req: false
       short: "Timestamp of last price update"
@@ -30,12 +31,14 @@ main: kit: entity: fuel_price: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "price"
       req: false
       short: "Current fuel price"
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "priceChange"
       req: false
       short: "Price change over the specified period"
@@ -90,9 +93,13 @@ main: kit: entity: fuel_price: {
           }
           method: "GET"
           orig: "/api/home"
-          parts: [
-            "api"
-            "home"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "home"
+            }
           ]
           select: {
             exist: [

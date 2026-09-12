@@ -46,6 +46,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "lastUpdated",
 						"short": "Timestamp of last price update",
 						"type": "`$STRING`",
@@ -56,11 +57,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "price",
 						"short": "Current fuel price",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "priceChange",
 						"short": "Price change over the specified period",
 						"type": "`$NUMBER`",
@@ -70,6 +73,10 @@ func MakeConfig() map[string]any {
 						"short": "Region ID where the station is located",
 						"type": "`$INTEGER`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "fuel_price",
 				"op": map[string]any{
@@ -107,9 +114,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/home",
-								"parts": []any{
-									"api",
-									"home",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "home",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -122,6 +133,10 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"api",
+									"home",
+								},
 							},
 						},
 					},
@@ -132,6 +147,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

@@ -42,6 +42,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "lastUpdated",
             ["short"] = "Timestamp of last price update",
             ["type"] = "`$STRING`",
@@ -52,11 +53,13 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "float",
             ["name"] = "price",
             ["short"] = "Current fuel price",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "float",
             ["name"] = "priceChange",
             ["short"] = "Price change over the specified period",
             ["type"] = "`$NUMBER`",
@@ -66,6 +69,10 @@ local function make_config()
             ["short"] = "Region ID where the station is located",
             ["type"] = "`$INTEGER`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "fuel_price",
         ["op"] = {
@@ -103,9 +110,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/home",
-                ["parts"] = {
-                  "api",
-                  "home",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "home",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -117,6 +128,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "home",
                 },
               },
             },
