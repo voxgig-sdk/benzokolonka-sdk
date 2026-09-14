@@ -105,7 +105,7 @@ local results, err = client:FuelPrice():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
+| TypeScript | `@voxgig-sdk/benzokolonka-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
 | Python | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
 | PHP | `voxgig-sdk/benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/benzokolonka-sdk/go` | `go get github.com/voxgig-sdk/benzokolonka-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:FuelPrice():list()
 ### TypeScript
 
 ```ts
-import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka'
+import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka-sdk'
 
 const client = new BenzokolonkaSDK()
 

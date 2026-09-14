@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka'
+import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka-sdk'
 
 const client = new BenzokolonkaSDK()
 ```
@@ -415,7 +415,7 @@ benzokolonka/
 Import the SDK from the package root:
 
 ```ts
-import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka'
+import { BenzokolonkaSDK } from '@voxgig-sdk/benzokolonka-sdk'
 ```
 
 ### Entity state
