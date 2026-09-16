@@ -1,12 +1,18 @@
 # Benzokolonka SDK feature factory
 
 from benzokolonka_sdk.feature.base_feature import BenzokolonkaBaseFeature
+from benzokolonka_sdk.feature.ratelimit_feature import BenzokolonkaRatelimitFeature
+from benzokolonka_sdk.feature.retry_feature import BenzokolonkaRetryFeature
 from benzokolonka_sdk.feature.test_feature import BenzokolonkaTestFeature
+from benzokolonka_sdk.feature.timeout_feature import BenzokolonkaTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: BenzokolonkaBaseFeature(),
+    "ratelimit": lambda: BenzokolonkaRatelimitFeature(),
+    "retry": lambda: BenzokolonkaRetryFeature(),
     "test": lambda: BenzokolonkaTestFeature(),
+    "timeout": lambda: BenzokolonkaTimeoutFeature(),
 }
 
 

@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Benzokolonka SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class BenzokolonkaFeatures
@@ -14,8 +17,14 @@ class BenzokolonkaFeatures
         switch ($name) {
             case "base":
                 return new BenzokolonkaBaseFeature();
+            case "ratelimit":
+                return new BenzokolonkaRatelimitFeature();
+            case "retry":
+                return new BenzokolonkaRetryFeature();
             case "test":
                 return new BenzokolonkaTestFeature();
+            case "timeout":
+                return new BenzokolonkaTimeoutFeature();
             default:
                 return new BenzokolonkaBaseFeature();
         }
@@ -31,7 +40,10 @@ class BenzokolonkaFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
