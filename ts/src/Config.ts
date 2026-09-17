@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      fuel_price: {
-      },
-
+        fuel_price: {
+        },
+  
     }
   }
 

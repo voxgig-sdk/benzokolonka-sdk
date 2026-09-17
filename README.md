@@ -105,12 +105,12 @@ local results, err = client:FuelPrice():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/benzokolonka-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
-| Python | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
-| PHP | `voxgig-sdk/benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
+| TypeScript | `@voxgig-sdk/benzokolonka-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/tags) |
+| Python | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/tags) |
+| PHP | `voxgig-sdk/benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/benzokolonka-sdk/go` | `go get github.com/voxgig-sdk/benzokolonka-sdk/go@latest` |
-| Ruby | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
-| Lua | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/releases) |
+| Ruby | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/tags) |
+| Lua | `voxgig-sdk-benzokolonka` | publish pending — [install from git tag](https://github.com/voxgig-sdk/benzokolonka-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/benzokolonka-sdk/go-cli` | `go install github.com/voxgig-sdk/benzokolonka-sdk/go-cli/cmd/benzokolonka@latest` |
 | Go MCP server | `github.com/voxgig-sdk/benzokolonka-sdk/go-mcp` | `go get github.com/voxgig-sdk/benzokolonka-sdk/go-mcp@latest` |
 
