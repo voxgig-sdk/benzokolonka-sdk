@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,41 +107,48 @@ class Config {
             "fields": [
                 {
                     "name": "address",
-                    "short": "Physical address of the station",
-                    "type": "`$STRING`"
+                    "title": "Address",
+                    "type": "`$STRING`",
+                    "short": "Physical address of the station"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the fuel station",
-                    "type": "`$INTEGER`"
+                    "title": "Id",
+                    "type": "`$INTEGER`",
+                    "short": "Unique identifier for the fuel station"
                 },
                 {
-                    "format": "date-time",
                     "name": "lastUpdated",
+                    "title": "Last Updated",
+                    "type": "`$STRING`",
                     "short": "Timestamp of last price update",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "name",
-                    "short": "Name of the fuel station",
-                    "type": "`$STRING`"
+                    "title": "Name",
+                    "type": "`$STRING`",
+                    "short": "Name of the fuel station"
                 },
                 {
-                    "format": "float",
                     "name": "price",
+                    "title": "Price",
+                    "type": "`$NUMBER`",
                     "short": "Current fuel price",
-                    "type": "`$NUMBER`"
+                    "format": "float"
                 },
                 {
-                    "format": "float",
                     "name": "priceChange",
+                    "title": "Price Change",
+                    "type": "`$NUMBER`",
                     "short": "Price change over the specified period",
-                    "type": "`$NUMBER`"
+                    "format": "float"
                 },
                 {
                     "name": "region",
-                    "short": "Region ID where the station is located",
-                    "type": "`$INTEGER`"
+                    "title": "Region",
+                    "type": "`$INTEGER`",
+                    "short": "Region ID where the station is located"
                 }
             ],
             "id": {
@@ -162,32 +162,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "ai95",
-                                        "kind": "query",
-                                        "name": "fuel",
-                                        "orig": "fuel",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": 7,
-                                        "kind": "query",
-                                        "name": "period",
-                                        "orig": "period",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 4,
-                                        "kind": "query",
-                                        "name": "region",
-                                        "orig": "region",
-                                        "type": "`$INTEGER`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/home",
@@ -199,21 +173,48 @@ class Config {
                                     "lit": "home"
                                 }
                             ],
+                            "parts": [
+                                "api",
+                                "home"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "fuel",
+                                        "orig": "fuel",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "reqd": true,
+                                        "example": "ai95"
+                                    },
+                                    {
+                                        "name": "period",
+                                        "orig": "period",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 7
+                                    },
+                                    {
+                                        "name": "region",
+                                        "orig": "region",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 4
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "fuel",
                                     "period",
                                     "region"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
-                            "parts": [
-                                "api",
-                                "home"
-                            ]
+                            }
                         }
                     ]
                 }

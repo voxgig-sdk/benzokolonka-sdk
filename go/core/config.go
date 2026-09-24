@@ -91,41 +91,48 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "address",
-						"short": "Physical address of the station",
+						"title": "Address",
 						"type": "`$STRING`",
+						"short": "Physical address of the station",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the fuel station",
+						"title": "Id",
 						"type": "`$INTEGER`",
+						"short": "Unique identifier for the fuel station",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "lastUpdated",
-						"short": "Timestamp of last price update",
+						"title": "Last Updated",
 						"type": "`$STRING`",
+						"short": "Timestamp of last price update",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "name",
-						"short": "Name of the fuel station",
+						"title": "Name",
 						"type": "`$STRING`",
+						"short": "Name of the fuel station",
 					},
 					map[string]any{
-						"format": "float",
 						"name": "price",
-						"short": "Current fuel price",
+						"title": "Price",
 						"type": "`$NUMBER`",
+						"short": "Current fuel price",
+						"format": "float",
 					},
 					map[string]any{
-						"format": "float",
 						"name": "priceChange",
-						"short": "Price change over the specified period",
+						"title": "Price Change",
 						"type": "`$NUMBER`",
+						"short": "Price change over the specified period",
+						"format": "float",
 					},
 					map[string]any{
 						"name": "region",
-						"short": "Region ID where the station is located",
+						"title": "Region",
 						"type": "`$INTEGER`",
+						"short": "Region ID where the station is located",
 					},
 				},
 				"id": map[string]any{
@@ -139,32 +146,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "ai95",
-											"kind": "query",
-											"name": "fuel",
-											"orig": "fuel",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 7,
-											"kind": "query",
-											"name": "period",
-											"orig": "period",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 4,
-											"kind": "query",
-											"name": "region",
-											"orig": "region",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/home",
@@ -176,20 +157,47 @@ func MakeConfig() map[string]any {
 										"lit": "home",
 									},
 								},
+								"parts": []any{
+									"api",
+									"home",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "fuel",
+											"orig": "fuel",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+											"example": "ai95",
+										},
+										map[string]any{
+											"name": "period",
+											"orig": "period",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 7,
+										},
+										map[string]any{
+											"name": "region",
+											"orig": "region",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 4,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"fuel",
 										"period",
 										"region",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"api",
-									"home",
 								},
 							},
 						},

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FuelPriceEntity = void 0;
 const BenzokolonkaEntityBase_1 = require("../BenzokolonkaEntityBase");
-// TODO: needs Entity superclass
 class FuelPriceEntity extends BenzokolonkaEntityBase_1.BenzokolonkaEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

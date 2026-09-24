@@ -116,41 +116,48 @@ def make_config():
         "fields": [
           {
             "name": "address",
-            "short": "Physical address of the station",
+            "title": "Address",
             "type": "`$STRING`",
+            "short": "Physical address of the station",
           },
           {
             "name": "id",
-            "short": "Unique identifier for the fuel station",
+            "title": "Id",
             "type": "`$INTEGER`",
+            "short": "Unique identifier for the fuel station",
           },
           {
-            "format": "date-time",
             "name": "lastUpdated",
-            "short": "Timestamp of last price update",
+            "title": "Last Updated",
             "type": "`$STRING`",
+            "short": "Timestamp of last price update",
+            "format": "date-time",
           },
           {
             "name": "name",
-            "short": "Name of the fuel station",
+            "title": "Name",
             "type": "`$STRING`",
+            "short": "Name of the fuel station",
           },
           {
-            "format": "float",
             "name": "price",
-            "short": "Current fuel price",
+            "title": "Price",
             "type": "`$NUMBER`",
+            "short": "Current fuel price",
+            "format": "float",
           },
           {
-            "format": "float",
             "name": "priceChange",
-            "short": "Price change over the specified period",
+            "title": "Price Change",
             "type": "`$NUMBER`",
+            "short": "Price change over the specified period",
+            "format": "float",
           },
           {
             "name": "region",
-            "short": "Region ID where the station is located",
+            "title": "Region",
             "type": "`$INTEGER`",
+            "short": "Region ID where the station is located",
           },
         ],
         "id": {
@@ -164,32 +171,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "ai95",
-                      "kind": "query",
-                      "name": "fuel",
-                      "orig": "fuel",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                    {
-                      "example": 7,
-                      "kind": "query",
-                      "name": "period",
-                      "orig": "period",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 4,
-                      "kind": "query",
-                      "name": "region",
-                      "orig": "region",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/home",
@@ -201,6 +182,41 @@ def make_config():
                     "lit": "home",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "home",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "fuel",
+                      "orig": "fuel",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                      "example": "ai95",
+                    },
+                    {
+                      "name": "period",
+                      "orig": "period",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 7,
+                    },
+                    {
+                      "name": "region",
+                      "orig": "region",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 4,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "fuel",
@@ -208,14 +224,6 @@ def make_config():
                     "region",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "api",
-                  "home",
-                ],
               },
             ],
           },

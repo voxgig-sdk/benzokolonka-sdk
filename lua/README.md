@@ -43,7 +43,7 @@ local fuelprices, err = client:FuelPrice():list()
 if err then error(err) end
 
 for _, item in ipairs(fuelprices) do
-  print(item["id"], item["address"])
+  print(item["id"])
 end
 ```
 

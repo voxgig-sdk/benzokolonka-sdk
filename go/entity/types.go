@@ -1,7 +1,7 @@
 // Typed models for the Benzokolonka SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,13 +14,6 @@ import (
 
 // FuelPrice is the typed data model for the fuel_price entity.
 type FuelPrice struct {
-	Address *string `json:"address,omitempty"`
-	Id *int `json:"id,omitempty"`
-	LastUpdated *string `json:"lastUpdated,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Price *float64 `json:"price,omitempty"`
-	PriceChange *float64 `json:"priceChange,omitempty"`
-	Region *int `json:"region,omitempty"`
 }
 
 // FuelPriceListMatch is the typed request payload for FuelPrice.ListTyped.

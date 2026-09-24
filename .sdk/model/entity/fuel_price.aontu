@@ -1,0 +1,134 @@
+# Entity: fuel_price
+
+main: kit: entity: fuel_price: {
+
+  alias: field: {}
+
+  fields: {
+    address: {
+      h: "Address"
+      n: "address"
+      r: false
+      sh: "Physical address of the station"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the fuel station"
+      t: "`$INTEGER`"
+    }
+    lastUpdated: {
+      fo: "date-time"
+      h: "Last Updated"
+      n: "lastUpdated"
+      r: false
+      sh: "Timestamp of last price update"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the fuel station"
+      t: "`$STRING`"
+    }
+    price: {
+      fo: "float"
+      h: "Price"
+      n: "price"
+      r: false
+      sh: "Current fuel price"
+      t: "`$NUMBER`"
+    }
+    priceChange: {
+      fo: "float"
+      h: "Price Change"
+      n: "priceChange"
+      r: false
+      sh: "Price change over the specified period"
+      t: "`$NUMBER`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      sh: "Region ID where the station is located"
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "fuel_price"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/home"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "ai95"
+                k: "query"
+                n: "fuel"
+                or: "fuel"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 7
+                k: "query"
+                n: "period"
+                or: "period"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 4
+                k: "query"
+                n: "region"
+                or: "region"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/home"
+          q: {
+            exist: [
+              "fuel"
+              "period"
+              "region"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "home"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

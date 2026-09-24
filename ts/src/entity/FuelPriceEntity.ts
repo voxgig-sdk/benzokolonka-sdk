@@ -19,7 +19,6 @@ import type {
   FuelPriceListMatch,
 } from '../BenzokolonkaTypes'
 
-// TODO: needs Entity superclass
 class FuelPriceEntity extends BenzokolonkaEntityBase<FuelPrice> {
 
   constructor(client: BenzokolonkaSDK, entopts: any) {
